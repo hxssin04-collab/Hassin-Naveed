@@ -1,0 +1,1337 @@
+{
+  "startedAt": "2026-10-11T16:05:35.058Z",
+  "baseURL": "http://127.0.0.1:4173",
+  "buildIndexModifiedAt": "2026-10-11T16:03:23.554Z",
+  "method": "Read-only source smoke using Chromium against the production Vite preview; isolated browser storage per viewport.",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "checks": [
+        {
+          "label": "/: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 22,
+            "failed": []
+          }
+        },
+        {
+          "label": "/: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 1440,
+            "viewportWidth": 1440
+          }
+        },
+        {
+          "label": "/shop: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/shop: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 6,
+            "failed": []
+          }
+        },
+        {
+          "label": "/shop: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 1440,
+            "viewportWidth": 1440
+          }
+        },
+        {
+          "label": "shop: six catalogue cards",
+          "passed": true
+        },
+        {
+          "label": "/product/arabian-princess: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/product/arabian-princess: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 6,
+            "failed": []
+          }
+        },
+        {
+          "label": "/product/arabian-princess: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 1440,
+            "viewportWidth": 1440
+          }
+        },
+        {
+          "label": "product: selected quantity two",
+          "passed": true
+        },
+        {
+          "label": "/bag: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/bag: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 1,
+            "failed": []
+          }
+        },
+        {
+          "label": "/bag: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 1440,
+            "viewportWidth": 1440
+          }
+        },
+        {
+          "label": "bag: two plushies cost £99.98",
+          "passed": true
+        },
+        {
+          "label": "bag: increasing to three costs £149.97",
+          "passed": true
+        },
+        {
+          "label": "bag: decreasing restores £99.98",
+          "passed": true
+        },
+        {
+          "label": "bag: remove shows empty state",
+          "passed": true
+        },
+        {
+          "label": "bag: header count clears",
+          "passed": true
+        },
+        {
+          "label": "/product/arabian-princess: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/product/arabian-princess: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 6,
+            "failed": []
+          }
+        },
+        {
+          "label": "/product/arabian-princess: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 1440,
+            "viewportWidth": 1440
+          }
+        },
+        {
+          "label": "/checkout: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/checkout: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 1,
+            "failed": []
+          }
+        },
+        {
+          "label": "/checkout: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 1440,
+            "viewportWidth": 1440
+          }
+        },
+        {
+          "label": "checkout: standard demo total is £104.93",
+          "passed": true
+        },
+        {
+          "label": "checkout: native required email validation keeps form active",
+          "passed": true,
+          "details": {
+            "valid": false,
+            "valueMissing": true,
+            "focused": true
+          }
+        },
+        {
+          "label": "checkout: express demo total is £108.93",
+          "passed": true
+        },
+        {
+          "label": "checkout: review receives focus",
+          "passed": true
+        },
+        {
+          "label": "checkout: review contains example contact and express delivery",
+          "passed": true
+        },
+        {
+          "label": "/checkout (review): rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 1,
+            "failed": []
+          }
+        },
+        {
+          "label": "/checkout (review): no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 1440,
+            "viewportWidth": 1440
+          }
+        },
+        {
+          "label": "checkout: switching back to standard restores £104.93",
+          "passed": true
+        },
+        {
+          "label": "checkout: completion receives focus",
+          "passed": true
+        },
+        {
+          "label": "checkout: completion explicitly says no order was placed",
+          "passed": true
+        },
+        {
+          "label": "checkout: example contact cleared from UI",
+          "passed": true
+        },
+        {
+          "label": "checkout: contact/address details are absent from storage",
+          "passed": true
+        },
+        {
+          "label": "checkout: demo retains two-plushie bag",
+          "passed": true
+        },
+        {
+          "label": "/checkout (complete): rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 1,
+            "failed": []
+          }
+        },
+        {
+          "label": "/checkout (complete): no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 1440,
+            "viewportWidth": 1440
+          }
+        },
+        {
+          "label": "checkout: reload restores empty contact form",
+          "passed": true
+        },
+        {
+          "label": "checkout: reload retains exact standard total",
+          "passed": true
+        },
+        {
+          "label": "no browser runtime errors",
+          "passed": true,
+          "details": []
+        },
+        {
+          "label": "no console errors",
+          "passed": true,
+          "details": []
+        },
+        {
+          "label": "no HTTP error responses",
+          "passed": true,
+          "details": []
+        },
+        {
+          "label": "demo performs no POST requests",
+          "passed": true,
+          "details": []
+        }
+      ],
+      "pages": [
+        {
+          "route": "/",
+          "title": "More Than JustPlushies",
+          "documentWidth": 1440,
+          "viewportWidth": 1440,
+          "images": [
+            {
+              "source": "/images/hero-960.webp",
+              "complete": true,
+              "naturalWidth": 730,
+              "width": 730,
+              "height": 608
+            },
+            {
+              "source": "/images/arabian-640.webp",
+              "complete": true,
+              "naturalWidth": 410,
+              "width": 408,
+              "height": 510
+            },
+            {
+              "source": "/images/turkish-640.webp",
+              "complete": true,
+              "naturalWidth": 410,
+              "width": 408,
+              "height": 510
+            },
+            {
+              "source": "/images/pakistani-640.webp",
+              "complete": true,
+              "naturalWidth": 410,
+              "width": 408,
+              "height": 510
+            },
+            {
+              "source": "/images/arabian-320.webp",
+              "complete": true,
+              "naturalWidth": 310,
+              "width": 302,
+              "height": 503
+            },
+            {
+              "source": "/images/turkish-320.webp",
+              "complete": true,
+              "naturalWidth": 310,
+              "width": 302,
+              "height": 503
+            },
+            {
+              "source": "/images/pakistani-320.webp",
+              "complete": true,
+              "naturalWidth": 310,
+              "width": 302,
+              "height": 503
+            },
+            {
+              "source": "/images/south-asian-320.webp",
+              "complete": true,
+              "naturalWidth": 310,
+              "width": 302,
+              "height": 503
+            },
+            {
+              "source": "/images/balkan-320.webp",
+              "complete": true,
+              "naturalWidth": 310,
+              "width": 302,
+              "height": 503
+            },
+            {
+              "source": "/images/egyptian-320.webp",
+              "complete": true,
+              "naturalWidth": 310,
+              "width": 302,
+              "height": 503
+            },
+            {
+              "source": "/images/south-asian-640.webp",
+              "complete": true,
+              "naturalWidth": 440,
+              "width": 469,
+              "height": 587
+            },
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 117,
+              "height": 123
+            },
+            {
+              "source": "/images/turkish-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 117,
+              "height": 123
+            },
+            {
+              "source": "/images/pakistani-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 117,
+              "height": 123
+            },
+            {
+              "source": "/images/south-asian-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 117,
+              "height": 123
+            },
+            {
+              "source": "/images/balkan-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 117,
+              "height": 123
+            },
+            {
+              "source": "/images/egyptian-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 117,
+              "height": 123
+            },
+            {
+              "source": "/images/story-960.webp",
+              "complete": true,
+              "naturalWidth": 690,
+              "width": 691,
+              "height": 678
+            },
+            {
+              "source": "/images/companions-960.webp",
+              "complete": true,
+              "naturalWidth": 690,
+              "width": 685,
+              "height": 527
+            },
+            {
+              "source": "/images/arabian-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 408,
+              "height": 272
+            },
+            {
+              "source": "/images/embroidery-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 408,
+              "height": 272
+            },
+            {
+              "source": "/images/balkan-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 408,
+              "height": 272
+            }
+          ]
+        },
+        {
+          "route": "/shop",
+          "title": "Shop All Plushies",
+          "documentWidth": 1440,
+          "viewportWidth": 1440,
+          "images": [
+            {
+              "source": "/images/arabian-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 339,
+              "height": 423
+            },
+            {
+              "source": "/images/turkish-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 339,
+              "height": 423
+            },
+            {
+              "source": "/images/pakistani-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 339,
+              "height": 423
+            },
+            {
+              "source": "/images/south-asian-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 339,
+              "height": 423
+            },
+            {
+              "source": "/images/balkan-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 339,
+              "height": 423
+            },
+            {
+              "source": "/images/egyptian-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 339,
+              "height": 423
+            }
+          ]
+        },
+        {
+          "route": "/product/arabian-princess",
+          "title": "Arabian Princess",
+          "documentWidth": 1440,
+          "viewportWidth": 1440,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 69,
+              "width": 56,
+              "height": 75
+            },
+            {
+              "source": "/images/embroidery-160.webp",
+              "complete": true,
+              "naturalWidth": 69,
+              "width": 56,
+              "height": 75
+            },
+            {
+              "source": "/images/arabian-640.webp",
+              "complete": true,
+              "naturalWidth": 599,
+              "width": 577,
+              "height": 721
+            },
+            {
+              "source": "/images/turkish-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 408,
+              "height": 510
+            },
+            {
+              "source": "/images/pakistani-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 408,
+              "height": 510
+            },
+            {
+              "source": "/images/south-asian-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 408,
+              "height": 510
+            }
+          ]
+        },
+        {
+          "route": "/bag",
+          "title": "Your Bag (2)",
+          "documentWidth": 1440,
+          "viewportWidth": 1440,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 96,
+              "width": 96,
+              "height": 120
+            }
+          ]
+        },
+        {
+          "route": "/product/arabian-princess",
+          "title": "Arabian Princess",
+          "documentWidth": 1440,
+          "viewportWidth": 1440,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 69,
+              "width": 56,
+              "height": 75
+            },
+            {
+              "source": "/images/embroidery-160.webp",
+              "complete": true,
+              "naturalWidth": 69,
+              "width": 56,
+              "height": 75
+            },
+            {
+              "source": "/images/arabian-640.webp",
+              "complete": true,
+              "naturalWidth": 599,
+              "width": 577,
+              "height": 721
+            },
+            {
+              "source": "/images/turkish-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 408,
+              "height": 510
+            },
+            {
+              "source": "/images/pakistani-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 408,
+              "height": 510
+            },
+            {
+              "source": "/images/south-asian-640.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "width": 408,
+              "height": 510
+            }
+          ]
+        },
+        {
+          "route": "/checkout",
+          "title": "Checkout",
+          "documentWidth": 1440,
+          "viewportWidth": 1440,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 64,
+              "width": 58,
+              "height": 72
+            }
+          ]
+        },
+        {
+          "route": "/checkout (review)",
+          "title": "Checkout",
+          "documentWidth": 1440,
+          "viewportWidth": 1440,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 64,
+              "width": 58,
+              "height": 72
+            }
+          ]
+        },
+        {
+          "route": "/checkout (complete)",
+          "title": "Checkout",
+          "documentWidth": 1440,
+          "viewportWidth": 1440,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 64,
+              "width": 58,
+              "height": 72
+            }
+          ]
+        }
+      ],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResponses": [],
+      "postRequests": [],
+      "passed": true
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "checks": [
+        {
+          "label": "/: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 22,
+            "failed": []
+          }
+        },
+        {
+          "label": "/: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 390,
+            "viewportWidth": 390
+          }
+        },
+        {
+          "label": "/shop: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/shop: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 6,
+            "failed": []
+          }
+        },
+        {
+          "label": "/shop: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 390,
+            "viewportWidth": 390
+          }
+        },
+        {
+          "label": "shop: six catalogue cards",
+          "passed": true
+        },
+        {
+          "label": "/product/arabian-princess: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/product/arabian-princess: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 6,
+            "failed": []
+          }
+        },
+        {
+          "label": "/product/arabian-princess: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 390,
+            "viewportWidth": 390
+          }
+        },
+        {
+          "label": "product: selected quantity two",
+          "passed": true
+        },
+        {
+          "label": "/bag: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/bag: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 1,
+            "failed": []
+          }
+        },
+        {
+          "label": "/bag: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 390,
+            "viewportWidth": 390
+          }
+        },
+        {
+          "label": "bag: two plushies cost £99.98",
+          "passed": true
+        },
+        {
+          "label": "bag: increasing to three costs £149.97",
+          "passed": true
+        },
+        {
+          "label": "bag: decreasing restores £99.98",
+          "passed": true
+        },
+        {
+          "label": "bag: remove shows empty state",
+          "passed": true
+        },
+        {
+          "label": "bag: header count clears",
+          "passed": true
+        },
+        {
+          "label": "/product/arabian-princess: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/product/arabian-princess: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 6,
+            "failed": []
+          }
+        },
+        {
+          "label": "/product/arabian-princess: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 390,
+            "viewportWidth": 390
+          }
+        },
+        {
+          "label": "/checkout: document HTTP 200",
+          "passed": true,
+          "details": {
+            "status": 200
+          }
+        },
+        {
+          "label": "/checkout: rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 1,
+            "failed": []
+          }
+        },
+        {
+          "label": "/checkout: no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 390,
+            "viewportWidth": 390
+          }
+        },
+        {
+          "label": "checkout: standard demo total is £104.93",
+          "passed": true
+        },
+        {
+          "label": "checkout: native required email validation keeps form active",
+          "passed": true,
+          "details": {
+            "valid": false,
+            "valueMissing": true,
+            "focused": true
+          }
+        },
+        {
+          "label": "checkout: express demo total is £108.93",
+          "passed": true
+        },
+        {
+          "label": "checkout: review receives focus",
+          "passed": true
+        },
+        {
+          "label": "checkout: review contains example contact and express delivery",
+          "passed": true
+        },
+        {
+          "label": "/checkout (review): rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 1,
+            "failed": []
+          }
+        },
+        {
+          "label": "/checkout (review): no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 390,
+            "viewportWidth": 390
+          }
+        },
+        {
+          "label": "checkout: switching back to standard restores £104.93",
+          "passed": true
+        },
+        {
+          "label": "checkout: completion receives focus",
+          "passed": true
+        },
+        {
+          "label": "checkout: completion explicitly says no order was placed",
+          "passed": true
+        },
+        {
+          "label": "checkout: example contact cleared from UI",
+          "passed": true
+        },
+        {
+          "label": "checkout: contact/address details are absent from storage",
+          "passed": true
+        },
+        {
+          "label": "checkout: demo retains two-plushie bag",
+          "passed": true
+        },
+        {
+          "label": "/checkout (complete): rendered images decoded",
+          "passed": true,
+          "details": {
+            "count": 1,
+            "failed": []
+          }
+        },
+        {
+          "label": "/checkout (complete): no horizontal overflow",
+          "passed": true,
+          "details": {
+            "documentWidth": 390,
+            "viewportWidth": 390
+          }
+        },
+        {
+          "label": "checkout: reload restores empty contact form",
+          "passed": true
+        },
+        {
+          "label": "checkout: reload retains exact standard total",
+          "passed": true
+        },
+        {
+          "label": "no browser runtime errors",
+          "passed": true,
+          "details": []
+        },
+        {
+          "label": "no console errors",
+          "passed": true,
+          "details": []
+        },
+        {
+          "label": "no HTTP error responses",
+          "passed": true,
+          "details": []
+        },
+        {
+          "label": "demo performs no POST requests",
+          "passed": true,
+          "details": []
+        }
+      ],
+      "pages": [
+        {
+          "route": "/",
+          "title": "More Than JustPlushies",
+          "documentWidth": 390,
+          "viewportWidth": 390,
+          "images": [
+            {
+              "source": "/images/hero-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 307
+            },
+            {
+              "source": "/images/arabian-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 411
+            },
+            {
+              "source": "/images/turkish-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 411
+            },
+            {
+              "source": "/images/pakistani-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 411
+            },
+            {
+              "source": "/images/arabian-320.webp",
+              "complete": true,
+              "naturalWidth": 222,
+              "width": 202,
+              "height": 337
+            },
+            {
+              "source": "/images/turkish-320.webp",
+              "complete": true,
+              "naturalWidth": 222,
+              "width": 202,
+              "height": 337
+            },
+            {
+              "source": "/images/pakistani-320.webp",
+              "complete": true,
+              "naturalWidth": 222,
+              "width": 202,
+              "height": 337
+            },
+            {
+              "source": "/images/south-asian-320.webp",
+              "complete": true,
+              "naturalWidth": 222,
+              "width": 202,
+              "height": 337
+            },
+            {
+              "source": "/images/balkan-320.webp",
+              "complete": true,
+              "naturalWidth": 222,
+              "width": 202,
+              "height": 337
+            },
+            {
+              "source": "/images/egyptian-320.webp",
+              "complete": true,
+              "naturalWidth": 222,
+              "width": 202,
+              "height": 337
+            },
+            {
+              "source": "/images/south-asian-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 411
+            },
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 101,
+              "height": 106
+            },
+            {
+              "source": "/images/turkish-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 101,
+              "height": 106
+            },
+            {
+              "source": "/images/pakistani-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 101,
+              "height": 106
+            },
+            {
+              "source": "/images/south-asian-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 101,
+              "height": 106
+            },
+            {
+              "source": "/images/balkan-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 101,
+              "height": 106
+            },
+            {
+              "source": "/images/egyptian-160.webp",
+              "complete": true,
+              "naturalWidth": 100,
+              "width": 101,
+              "height": 106
+            },
+            {
+              "source": "/images/story-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 343
+            },
+            {
+              "source": "/images/companions-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 297
+            },
+            {
+              "source": "/images/arabian-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 241
+            },
+            {
+              "source": "/images/embroidery-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 241
+            },
+            {
+              "source": "/images/balkan-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 241
+            }
+          ]
+        },
+        {
+          "route": "/shop",
+          "title": "Shop All Plushies",
+          "documentWidth": 390,
+          "viewportWidth": 390,
+          "images": [
+            {
+              "source": "/images/arabian-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            },
+            {
+              "source": "/images/turkish-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            },
+            {
+              "source": "/images/pakistani-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            },
+            {
+              "source": "/images/south-asian-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            },
+            {
+              "source": "/images/balkan-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            },
+            {
+              "source": "/images/egyptian-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            }
+          ]
+        },
+        {
+          "route": "/product/arabian-princess",
+          "title": "Arabian Princess",
+          "documentWidth": 390,
+          "viewportWidth": 390,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 69,
+              "width": 57,
+              "height": 72
+            },
+            {
+              "source": "/images/embroidery-160.webp",
+              "complete": true,
+              "naturalWidth": 69,
+              "width": 57,
+              "height": 72
+            },
+            {
+              "source": "/images/arabian-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 420
+            },
+            {
+              "source": "/images/turkish-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            },
+            {
+              "source": "/images/pakistani-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            },
+            {
+              "source": "/images/south-asian-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            }
+          ]
+        },
+        {
+          "route": "/bag",
+          "title": "Your Bag (2)",
+          "documentWidth": 390,
+          "viewportWidth": 390,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 96,
+              "width": 86,
+              "height": 108
+            }
+          ]
+        },
+        {
+          "route": "/product/arabian-princess",
+          "title": "Arabian Princess",
+          "documentWidth": 390,
+          "viewportWidth": 390,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 69,
+              "width": 57,
+              "height": 72
+            },
+            {
+              "source": "/images/embroidery-160.webp",
+              "complete": true,
+              "naturalWidth": 69,
+              "width": 57,
+              "height": 72
+            },
+            {
+              "source": "/images/arabian-640.webp",
+              "complete": true,
+              "naturalWidth": 351,
+              "width": 350,
+              "height": 420
+            },
+            {
+              "source": "/images/turkish-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            },
+            {
+              "source": "/images/pakistani-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            },
+            {
+              "source": "/images/south-asian-320.webp",
+              "complete": true,
+              "naturalWidth": 171,
+              "width": 167,
+              "height": 209
+            }
+          ]
+        },
+        {
+          "route": "/checkout",
+          "title": "Checkout",
+          "documentWidth": 390,
+          "viewportWidth": 390,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 64,
+              "width": 58,
+              "height": 72
+            }
+          ]
+        },
+        {
+          "route": "/checkout (review)",
+          "title": "Checkout",
+          "documentWidth": 390,
+          "viewportWidth": 390,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 64,
+              "width": 58,
+              "height": 72
+            }
+          ]
+        },
+        {
+          "route": "/checkout (complete)",
+          "title": "Checkout",
+          "documentWidth": 390,
+          "viewportWidth": 390,
+          "images": [
+            {
+              "source": "/images/arabian-160.webp",
+              "complete": true,
+              "naturalWidth": 64,
+              "width": 58,
+              "height": 72
+            }
+          ]
+        }
+      ],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResponses": [],
+      "postRequests": [],
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Local production preview only; no deployed-host validation.",
+    "No live payments or orders exist; demo behavior was checked.",
+    "No visual screenshot comparison or full accessibility audit was run in this smoke."
+  ],
+  "completedAt": "2026-10-11T16:05:49.275Z",
+  "passed": true
+}

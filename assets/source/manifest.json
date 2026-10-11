@@ -52,5 +52,11 @@
     "generation_file": "exec-4174fcde-6b3b-495a-8907-e8c6b228b387.png",
     "source": "assets/source/embroidery.png",
     "sha256": "acbc9c56e94d769bb2b6e831181f1a51b4dc72d6b0111acee0f1639b7f2ed7dd"
+  },
+  {
+    "name": "hero-reference",
+    "generation_file": "exec-e5ceda80-01a9-44f0-b220-f032b68d0c37.png",
+    "source": "assets/source/hero-reference.png",
+    "sha256": "c4b5a5e6e16d634c915f8100bdbc6336aa04e30d0a7053ca3621187305a6f772"
   }
 ]

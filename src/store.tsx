@@ -3,7 +3,21 @@ import { products } from './data';
 export const money=(value:number)=>new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(value);
 export type BagItem={key:string;productId:string;quantity:number;note:string};
 const known=(id:unknown)=>typeof id==='string'&&products.some(p=>p.id===id);
-function restoreBag():BagItem[]{try{const saved=JSON.parse(localStorage.getItem('hp-bag')||'[]');if(!Array.isArray(saved))return [];return saved.filter(i=>i&&known(i.productId)&&Number.isInteger(i.quantity)&&i.quantity>0&&i.quantity<=20&&typeof i.note==='string'&&i.note.length<=80).map(i=>({...i,key:JSON.stringify([i.productId,i.note])}));}catch{return [];}}
+function restoreBag():BagItem[]{
+ try{
+  const saved=JSON.parse(localStorage.getItem('hp-bag')||'[]');
+  if(!Array.isArray(saved))return [];
+  const items=new Map<string,BagItem>();
+  for(const item of saved){
+   if(!item||!known(item.productId)||!Number.isInteger(item.quantity)||item.quantity<1||item.quantity>20||typeof item.note!=='string'||item.note.length>80)continue;
+   const note=item.note.trim();
+   const key=JSON.stringify([item.productId,note]);
+   const previous=items.get(key);
+   items.set(key,{key,productId:item.productId,quantity:Math.min(20,(previous?.quantity||0)+item.quantity),note});
+  }
+  return [...items.values()];
+ }catch{return [];}
+}
 function restoreWish():string[]{try{const saved=JSON.parse(localStorage.getItem('hp-wishlist')||'[]');return Array.isArray(saved)?[...new Set(saved.filter(known))] as string[]:[];}catch{return [];}}
 type Store={bag:BagItem[];wishlist:string[];message:string;count:number;subtotal:number;add:(id:string,quantity?:number,note?:string)=>void;change:(key:string,quantity:number)=>void;remove:(key:string)=>void;toggle:(id:string)=>void;announce:(message:string)=>void};
 const Context=createContext<Store|null>(null);

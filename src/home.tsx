@@ -1,13 +1,110 @@
-import { useRef,useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight,ArrowLeft,Check,Heart,Flower,Globe,Sparkle,ShoppingBag } from '@phosphor-icons/react';
-import { articles,collections,products,story,values } from './data';
-import { Benefits,Image,Newsletter,ProductCard } from './components';
-import { money,useStore } from './store';
-export function Builder({compact=false}:{compact?:boolean}){const [selected,setSelected]=useState('south-asian-dream');const [note,setNote]=useState('');const product=products.find(p=>p.id===selected)!;const {add}=useStore();const Heading=compact?'h2':'h1';return <div className={`builder ${compact?'compact-builder':''}`}><div className="builder-intro"><p className="eyebrow">A LITTLE MORE YOU</p><Heading tabIndex={compact?undefined:-1}>Create Your<br/>Perfect Plushie</Heading><p>Choose a style you love and add a thoughtful little message to make the moment yours.</p><span className="builder-note"><Heart size={23} weight="light"/> A meaningful gift,<br/>chosen with love.</span></div><div className="builder-preview"><Image key={selected} src={product.image} alt={product.alt} width={800} height={1000} loading={compact?'lazy':'eager'}/><p>{product.name}</p></div><div className="builder-panel"><fieldset><legend><span className="step-number">1</span>Choose your style</legend><div className="style-options">{products.map(p=><button key={p.id} type="button" className={`style-option ${selected===p.id?'selected':''}`} aria-label={`Choose ${p.name}`} aria-pressed={selected===p.id} onClick={()=>setSelected(p.id)}><Image src={p.image} alt="" sizes="100px" width={100} height={110} loading="eager"/>{selected===p.id&&<span className="style-check"><Check size={13}/></span>}<span>{p.collection}</span></button>)}</div></fieldset><div className="field"><label htmlFor={`gift-note-${compact?'home':'page'}`}><span className="step-number">2</span>A little gift note <small>Optional</small></label><textarea id={`gift-note-${compact?'home':'page'}`} rows={2} maxLength={80} placeholder="A little message from the heart…" value={note} onChange={e=>setNote(e.target.value)}/><span className="field-hint">A message to accompany your selected design.</span></div><div className="builder-total"><span>Your little companion</span><strong>{money(product.price)}</strong></div><button className="button" onClick={()=>add(product.id,1,note)}><ShoppingBag size={19}/>Add to Bag <ArrowRight size={18}/></button><p className="fine-print">Design preview. Available styles are shown above.</p></div></div>;}
-export function BuilderPage(){return <section className="container page"><Builder/><div className="builder-explanation"><h2>A style with a story.</h2><p>Our preview shows complete outfits so you can see the little details together. Choose the companion that speaks to you; your selected style and gift note will stay with it in your bag.</p></div></section>;}
-export function ArticleCards(){return <div className="article-grid">{articles.map(a=><article key={a.slug}><Link className="article-media" to={`/journal/${a.slug}`}><Image src={a.image} alt={a.alt} width={600} height={400}/></Link><h3><Link to={`/journal/${a.slug}`}>{a.title}</Link></h3><p>{a.excerpt}</p><Link className="text-link" to={`/journal/${a.slug}`}>Read the story <ArrowRight size={16}/></Link></article>)}</div>;}
-export function HomePage(){const track=useRef<HTMLDivElement>(null);const scroll=(direction:number)=>track.current?.scrollBy({left:direction*track.current.clientWidth*.75,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});return <><div className="container"><section className="hero"><div className="hero-copy"><p className="eyebrow">PREMIUM MUSLIM PLUSHIES</p><h1>More Than Just<br/>Plushies</h1><p>Thoughtfully designed hijabi plushies that celebrate culture, faith and kindness.</p><Link className="button" to="/shop">Shop Collection <ArrowRight size={18}/></Link></div><div className="hero-media"><Image src="/images/hero.webp" alt="Three floral hijabi plush dolls in burgundy, navy and olive on soft ivory linen" sizes="(max-width:767px) 90vw, 720px" width={960} height={720} loading="eager" fetchPriority="high"/></div></section><Benefits/><section className="section"><div className="section-heading"><div><h2>Meet your little companions.</h2><p>Beautifully detailed. Full of character. Made for meaningful moments.</p></div><Link className="text-link" to="/shop">Shop all plushies <ArrowRight size={17}/></Link></div><div className="product-grid featured-grid">{products.slice(0,3).map(p=><ProductCard product={p} key={p.id}/>)}</div></section></div>
- <section className="collections-section section"><div className="container"><div className="section-heading"><div><h2>Our Collections</h2><p>Each collection tells a unique story, inspired by cultures and traditions around the world.</p></div><div className="carousel-actions"><button className="icon-button outlined" aria-label="Previous collections" onClick={()=>scroll(-1)}><ArrowLeft size={18}/></button><button className="icon-button outlined" aria-label="Next collections" onClick={()=>scroll(1)}><ArrowRight size={18}/></button></div></div><div className="collection-track" ref={track}>{collections.map(c=><Link className="collection-card" to={`/collections/${c.slug}`} key={c.slug}><Image src={c.image} alt={c.alt} width={480} height={600}/><div><h3>{c.name}</h3><ArrowRight size={18}/></div></Link>)}</div><Link className="text-link collection-all" to="/collections">Discover all collections <ArrowRight size={16}/></Link></div></section>
- <section className="container section"><Builder compact/></section><section className="container story-section section"><Image src="/images/story.webp" alt="Two floral hijabi plush dolls beside a vase of blossoms on ivory linen" width={800} height={800}/><div><p className="eyebrow">THE HEART BEHIND THE PLUSHIES</p><h2>Our Story</h2><p>{story}</p><p>Our plushies are more than just toys; they are a celebration of faith, identity and kindness.</p><Link className="button secondary" to="/about">Discover our story <ArrowRight size={18}/></Link></div></section>
- <section className="values-section"><div className="container values-inner"><div><h2>More than a toy.<br/>A little sense of belonging.</h2><p>Small companions. Meaningful connections.</p></div>{values.map(([title,text],i)=>{const Icon=[Sparkle,Globe,Flower,Heart][i];return <div className="value" key={title}><Icon size={25} weight="light" aria-hidden="true"/><h3>{title}</h3><p>{text}</p></div>;})}</div></section><section className="container section"><div className="section-heading"><div><h2>Journal</h2><p>Stories, insights and inspiration from around the world.</p></div><Link className="text-link" to="/journal">View all stories <ArrowRight size={17}/></Link></div><ArticleCards/></section><Newsletter/></>;}
+import { ArrowRight, ArrowLeft, Check, ShoppingBag } from '@phosphor-icons/react';
+import { articles, collections, products, story, values } from './data';
+import { Benefits, Image, Newsletter, ProductCard } from './components';
+import { money, useStore } from './store';
+
+export function Builder({ compact = false }: { compact?: boolean }) {
+  const [selected, setSelected] = useState('south-asian-dream');
+  const [note, setNote] = useState('');
+  const product = products.find(p => p.id === selected)!;
+  const { add } = useStore();
+  const Heading = compact ? 'h2' : 'h1';
+
+  return <div className={`builder ${compact ? 'compact-builder' : ''}`}>
+    <div className="builder-intro">
+      <p className="eyebrow">A LITTLE MORE YOU</p>
+      <Heading tabIndex={compact ? undefined : -1}>Create Your<br />Perfect Plushie</Heading>
+      <p>Choose a style you love and add a thoughtful little message to make the moment yours.</p>
+      {compact && <Link className="text-link builder-start" to="/build-your-own">Start Customising <ArrowRight size={17} /></Link>}
+    </div>
+    <div className="builder-preview">
+      <Image key={selected} src={product.image} alt={product.alt} sizes="(max-width:767px) 90vw, (max-width:1023px) 43vw, 440px" width={800} height={1000} loading={compact ? 'lazy' : 'eager'} />
+      <p>{product.name}</p>
+    </div>
+    <div className="builder-panel">
+      <fieldset>
+        <legend><span className="step-number">1</span>Choose your style</legend>
+        <div className="style-options">
+          {products.map(p => <button key={p.id} type="button" className={`style-option ${selected === p.id ? 'selected' : ''}`} aria-label={`Choose ${p.name}`} aria-pressed={selected === p.id} onClick={() => setSelected(p.id)}>
+            <Image src={p.image} alt="" sizes="100px" width={100} height={110} loading="eager" />
+            {selected === p.id && <span className="style-check"><Check size={13} /></span>}
+            <span>{p.collection}</span>
+          </button>)}
+        </div>
+      </fieldset>
+      <div className="field">
+        <label htmlFor={`gift-note-${compact ? 'home' : 'page'}`}><span className="step-number">2</span>A little gift note <small>Optional</small></label>
+        <textarea id={`gift-note-${compact ? 'home' : 'page'}`} rows={2} maxLength={80} placeholder="A little message from the heart…" value={note} onChange={e => setNote(e.target.value)} />
+        <span className="field-hint">A message to accompany your selected design.</span>
+      </div>
+      <div className="builder-total"><span>Your little companion</span><strong>{money(product.price)}</strong></div>
+      <button className="button" onClick={() => add(product.id, 1, note)}><ShoppingBag size={19} />Add to Bag <ArrowRight size={18} /></button>
+      <p className="fine-print">Design preview. Available styles are shown above.</p>
+    </div>
+  </div>;
+}
+
+export function BuilderPage() {
+  return <section className="container page"><Builder /><div className="builder-explanation"><h2>A style with a story.</h2><p>Our preview shows complete outfits so you can see the little details together. Choose the companion that speaks to you; your selected style and gift note will stay with it in your bag.</p></div></section>;
+}
+
+export function ArticleCards() {
+  return <div className="article-grid">{articles.map(a => <article key={a.slug}>
+    <Link className="article-media" to={`/journal/${a.slug}`}><Image src={a.image} alt={a.alt} width={600} height={400} /></Link>
+    <h3><Link to={`/journal/${a.slug}`}>{a.title}</Link></h3>
+    <p>{a.excerpt}</p>
+    <Link className="text-link" to={`/journal/${a.slug}`}>Read the story <ArrowRight size={16} /></Link>
+  </article>)}</div>;
+}
+
+export function HomePage() {
+  const track = useRef<HTMLDivElement>(null);
+  const scroll = (direction: number) => track.current?.scrollBy({ left: direction * track.current.clientWidth * .75, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+
+  return <>
+    <div className="container">
+      <section className="hero">
+        <div className="hero-copy">
+          <p className="eyebrow">PREMIUM MUSLIM PLUSHIES</p>
+          <h1>More Than Just<br />Plushies</h1>
+          <p>Thoughtfully designed hijabi plushies that celebrate culture, faith and kindness.</p>
+          <Link className="button" to="/shop">Shop Collection <ArrowRight size={18} /></Link>
+        </div>
+        <div className="hero-media"><Image src="/images/hero.webp" alt="A burgundy floral hijabi cloth plushie holding a bouquet of roses on soft ivory linen" sizes="(max-width:767px) 90vw, (max-width:1439px) 54vw, 730px" width={1633} height={963} loading="eager" fetchPriority="high" /></div>
+      </section>
+      <Benefits />
+      <section className="section">
+        <div className="section-heading"><div><h2>Meet your little companions.</h2><p>Beautifully detailed. Full of character. Made for meaningful moments.</p></div><Link className="text-link" to="/shop">Shop all plushies <ArrowRight size={17} /></Link></div>
+        <div className="product-grid featured-grid">{products.slice(0, 3).map(p => <ProductCard product={p} imageSizes="(max-width:767px) 90vw, (max-width:1023px) 30vw, 410px" key={p.id} />)}</div>
+      </section>
+    </div>
+    <section className="collections-section section">
+      <div className="container">
+        <div className="section-heading"><div><h2>Our Collections</h2><p>Each collection tells a unique story, inspired by cultures and traditions around the world.</p></div><div className="carousel-actions"><button className="icon-button outlined" aria-label="Previous collections" onClick={() => scroll(-1)}><ArrowLeft size={18} /></button><button className="icon-button outlined" aria-label="Next collections" onClick={() => scroll(1)}><ArrowRight size={18} /></button></div></div>
+        <div className="collection-track" ref={track}>{collections.map(c => <Link className="collection-card" to={`/collections/${c.slug}`} key={c.slug}>
+          <Image src={c.image} alt={c.alt} sizes="(max-width:767px) 57vw, (max-width:1023px) 30vw, 310px" width={480} height={600} />
+          <div><h3>{c.name}</h3><ArrowRight size={18} /></div>
+        </Link>)}</div>
+        <Link className="text-link collection-all" to="/collections">Discover all collections <ArrowRight size={16} /></Link>
+      </div>
+    </section>
+    <section className="container section"><Builder compact /></section>
+    <section className="container story-section section">
+      <Image src="/images/story.webp" alt="Two floral hijabi plush dolls in rose and navy beside a vase of blossoms on ivory linen" sizes="(max-width:767px) 90vw, 690px" width={800} height={800} />
+      <div><p className="eyebrow">THE HEART BEHIND THE PLUSHIES</p><h2>Our Story</h2><p>{story}</p><p>Our plushies are more than just toys; they are a celebration of faith, identity and kindness.</p><Link className="button secondary story-button" to="/about">Learn More <ArrowRight size={18} /></Link></div>
+    </section>
+    <section className="values-section section">
+      <div className="container values-inner">
+        <div className="values-copy"><p className="eyebrow">A LITTLE SENSE OF BELONGING</p><h2>More than a toy.<br />A story to cherish.</h2><p>Small companions that celebrate who we are, where we come from, and the kindness we share.</p><div className="values-list">{values.map(([title, text]) => <div className="value" key={title}><h3>{title}</h3><p>{text}</p></div>)}</div></div>
+        <Image className="values-photo" src="/images/companions.webp" alt="Three floral hijabi plush dolls in navy, burgundy and olive sitting together on soft ivory linen" sizes="(max-width:767px) 90vw, 690px" width={960} height={720} />
+      </div>
+    </section>
+    <section className="container section">
+      <div className="section-heading"><div><h2>Journal</h2><p>Stories, insights and inspiration from around the world.</p></div><Link className="text-link" to="/journal">View all stories <ArrowRight size={17} /></Link></div>
+      <ArticleCards />
+    </section>
+    <Newsletter />
+  </>;
+}

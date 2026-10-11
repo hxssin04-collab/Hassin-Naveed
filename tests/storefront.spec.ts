@@ -45,6 +45,25 @@ test('bag quantities, exact prices, persistence and removal work',async({page})=
 test('customisation changes the preview and saves selected design and gift note',async({page})=>{
   await page.goto('/build-your-own');await page.getByRole('button',{name:'Choose Balkan Charm'}).click();await expect(page.locator('.builder-preview img')).toHaveAttribute('src','/images/balkan.webp');await expect(page.getByRole('button',{name:'Choose Balkan Charm'})).toHaveAttribute('aria-pressed','true');await page.getByRole('textbox',{name:/A little gift note/}).fill('For a kind little heart');await page.getByRole('button',{name:'Add to Bag'}).click();await page.goto('/bag');await expect(page.locator('.bag-item')).toContainText('Balkan Charm');await expect(page.locator('.bag-item')).toContainText('For a kind little heart');await page.reload();await expect(page.locator('.bag-item')).toContainText('For a kind little heart');
 });
+test('restored bag merges duplicate designs and rejects invalid entries',async({page})=>{
+  const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+  await page.goto('/');
+  await page.evaluate(()=>localStorage.setItem('hp-bag',JSON.stringify([
+    {productId:'arabian-princess',quantity:13,note:' A little gift '},
+    {productId:'arabian-princess',quantity:14,note:'A little gift'},
+    {productId:'turkish-beauty',quantity:2,note:''},
+    {productId:'unknown',quantity:1,note:''},
+    {productId:'balkan-charm',quantity:-1,note:''},
+    {productId:'egyptian-elegance',quantity:1.5,note:''}
+  ])));
+  await page.reload();await page.goto('/bag');
+  await expect(page.locator('.bag-item')).toHaveCount(2);
+  await expect(page.getByRole('heading',{level:1})).toHaveText('Your Bag (22)');
+  await expect(page.locator('.summary-total dd')).toHaveText('£1,099.78');
+  await expect(page.locator('.bag-item').first()).toContainText('A little gift');
+  await expect(page.locator('.bag-item').first().getByRole('button',{name:'Increase quantity'})).toBeDisabled();
+  await page.reload();await expect(page.locator('.bag-item')).toHaveCount(2);expect(errors).toEqual([]);
+});
 test('checkout validates, calculates delivery, clears details and never places orders',async({page})=>{
   const posts:string[]=[];page.on('request',r=>{if(r.method()==='POST')posts.push(r.url());});await addArabian(page);await page.goto('/checkout');await page.getByRole('button',{name:'Review demo'}).click();await expect(page.getByRole('textbox',{name:'Email address',exact:true})).toBeFocused();await expect(page.getByRole('heading',{name:'Review your demo'})).not.toBeVisible();
   await page.getByRole('button',{name:'Use example details'}).click();await page.getByRole('radio',{name:/Express delivery/}).check();await expect(page.locator('.summary-total dd')).toHaveText('£58.94');await page.getByRole('button',{name:'Review demo'}).click();await expect(page.getByRole('heading',{name:'Review your demo'})).toBeFocused();await expect(page.locator('.checkout-review')).toContainText('amina@example.com');await page.getByRole('button',{name:'Edit details'}).click();await page.getByRole('radio',{name:/Standard delivery/}).check();await expect(page.locator('.summary-total dd')).toHaveText('£54.94');await page.getByRole('button',{name:'Review demo'}).click();await page.getByRole('button',{name:'Complete demo'}).click();await expect(page.getByRole('heading',{name:'A little look at what’s next.'})).toBeFocused();await expect(page.locator('.demo-complete')).toContainText('no order was placed');await expect(page.locator('main')).not.toContainText('amina@example.com');await expect(page.getByRole('link',{name:'Shopping bag, 1 items'})).toBeVisible();
@@ -66,6 +85,12 @@ test('five important pages pass automated WCAG A/AA accessibility checks',async(
 test('reference screenshots document the full current desktop and mobile build',async({page},testInfo)=>{
   test.setTimeout(120000);await mkdir('artifacts',{recursive:true});await addArabian(page);for(const [name,route] of [['home','/'],['shop','/shop'],['collections','/collections'],['collection','/collections/arabian'],['product','/product/arabian-princess'],['builder','/build-your-own'],['bag','/bag'],['checkout','/checkout'],['about','/about'],['journal','/journal'],['article','/journal/art-of-embroidery'],['contact','/info/contact']]){await page.goto(route);await renderReady(page);if(name==='home'||name==='builder'){await page.locator('.builder-panel').evaluate(el=>el.scrollIntoView({behavior:'instant',block:'center'}));await page.screenshot({path:`artifacts/${name}-panel-${testInfo.project.name}.png`});await page.evaluate(async()=>{window.scrollTo({top:0,behavior:'instant'});await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));});}await page.screenshot({path:`artifacts/${name}-${testInfo.project.name}.png`,fullPage:true});if(name==='home')await page.screenshot({path:`artifacts/home-${testInfo.project.name}-viewport.png`});}
 });
-test('reduced motion is respected and skip link reaches main content',async({page})=>{
+test('reduced motion, skip navigation and the persistent header remain usable',async({page,isMobile})=>{
   await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');await expect.poll(()=>page.evaluate(()=>getComputedStyle(document.documentElement).scrollBehavior)).toBe('auto');const link=page.getByRole('link',{name:'Skip to content'});await link.focus();await expect(link).toBeFocused();await page.keyboard.press('Enter');await expect(page).toHaveURL(/#main-content$/);expect(await page.evaluate(()=>document.activeElement===document.getElementById('main-content'))).toBe(true);
+  await page.evaluate(()=>window.scrollTo({top:1500,behavior:'instant'}));
+  const header=await page.getByRole('banner').boundingBox();expect(header).not.toBeNull();
+  expect(header!.y).toBeGreaterThanOrEqual(0);expect(header!.y+header!.height).toBeLessThanOrEqual(110);
+  if(isMobile){await page.getByRole('button',{name:'Open navigation menu'}).click();await page.getByRole('navigation',{name:'Mobile navigation'}).getByRole('link',{name:'Shop',exact:true}).click();}
+  else await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Shop',exact:true}).click();
+  await expect(page).toHaveURL(/\/shop$/);
 });

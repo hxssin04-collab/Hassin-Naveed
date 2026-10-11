@@ -48,6 +48,6 @@ Contact and newsletter forms validate locally and explicitly state that no messa
 
 `src/data.ts` holds catalogue/editorial data; `store.tsx` owns validated browser persistence and totals; `components.tsx` holds shared navigation, cards, controls and footer; `home.tsx`, `shop.tsx`, `commerce.tsx` and `editorial.tsx` contain page groups. `App.tsx` composes routes and page focus; `styles.css` contains the shared design tokens and responsive system.
 
-The original tracked `2.0` file remains unchanged. `vercel.json` provides the Vite build and SPA fallback configuration. Deployment needs the hosting account integration or secure credentials; a local build or Git push does not establish that a public deployment exists.
+The original tracked `2.0` file remains unchanged. `vercel.json` and `netlify.toml` provide the Vite build and SPA fallback configuration. Deployment needs the hosting account integration or secure credentials; a local build or Git push does not establish that a public deployment exists.
 
-See [DESIGN.md](DESIGN.md) for visual decisions and [QA_REPORT.md](QA_REPORT.md) for current-build verification and limits.
+See [REFERENCE_AUDIT.md](REFERENCE_AUDIT.md) for the comparison with all eight pictures and the video, [DESIGN.md](DESIGN.md) for the shared visual system, and [QA_REPORT.md](QA_REPORT.md) for current-build verification and limits.
