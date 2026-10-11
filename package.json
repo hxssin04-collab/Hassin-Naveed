@@ -1,0 +1,6 @@
+{
+  "name": "hijabi-plushies", "version": "1.0.0", "private": true, "type": "module",
+  "scripts": { "dev": "vite --host 0.0.0.0", "build": "tsc -b && vite build", "preview": "vite preview --host 0.0.0.0", "test:e2e": "playwright test" },
+  "dependencies": { "react": "^19.2.0", "react-dom": "^19.2.0", "react-router-dom": "^7.9.3", "@phosphor-icons/react": "^2.1.10", "@fontsource/cormorant-garamond": "^5.2.8", "@fontsource/dm-sans": "^5.2.8" },
+  "devDependencies": { "@types/react": "^19.2.0", "@types/react-dom": "^19.2.0", "@vitejs/plugin-react": "^5.0.4", "typescript": "^5.9.3", "vite": "^7.1.9", "@playwright/test": "^1.56.0", "@axe-core/playwright": "^4.10.2" }
+}
