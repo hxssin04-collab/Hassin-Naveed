@@ -1,0 +1,56 @@
+[
+  {
+    "name": "arabian",
+    "generation_file": "exec-96734088-06ee-4683-8346-efb9e99e436a.png",
+    "source": "assets/source/arabian.png",
+    "sha256": "8bc0fa8c28e21d3c6e49a7104c4b44579ba0f51d8ed5d9835efaf19f163879e3"
+  },
+  {
+    "name": "turkish",
+    "generation_file": "exec-a0c8bea4-be5b-43a7-b645-52d9f78ae22a.png",
+    "source": "assets/source/turkish.png",
+    "sha256": "618d66807c965c07e1178821f8702449081974c168a68f0761abad4922e0a655"
+  },
+  {
+    "name": "pakistani",
+    "generation_file": "exec-5b93bc69-1514-4d93-9af9-1ab619e7f242.png",
+    "source": "assets/source/pakistani.png",
+    "sha256": "4ea82b4d07f10ff50ae579de6b181482bfd20ba47b01d07dd9e3bababf91b752"
+  },
+  {
+    "name": "south-asian",
+    "generation_file": "exec-2e7f1d7d-f3a1-4297-874d-2b778d871ae3.png",
+    "source": "assets/source/south-asian.png",
+    "sha256": "077e51849faf9d1b0232956a6c674eb06549759ce58e5df8cf37c59e08ef3ff0"
+  },
+  {
+    "name": "balkan",
+    "generation_file": "exec-917b90ec-4d3c-471b-905b-d5f300624156.png",
+    "source": "assets/source/balkan.png",
+    "sha256": "5a4b557d58cb3e8262aab5ed96640fbb3a29b44c1b47c98188ba5e9dec9bb9bf"
+  },
+  {
+    "name": "egyptian",
+    "generation_file": "exec-5ec407a0-638c-4950-a736-5c530e0b90d0.png",
+    "source": "assets/source/egyptian.png",
+    "sha256": "02786a2b361559cc6c7f1260c1dfb31a60cb33d0c97c44e285cb2ce334343ba5"
+  },
+  {
+    "name": "hero",
+    "generation_file": "exec-ddd75643-80ce-4729-a45c-ac9ec9219746.png",
+    "source": "assets/source/hero.png",
+    "sha256": "df6a0da4cda8190bd432e12337aa200e5d7e85d961d2693c801eb6ec2dafe4b0"
+  },
+  {
+    "name": "story",
+    "generation_file": "exec-45e3b38f-1f36-4f90-9d75-5861e2b75761.png",
+    "source": "assets/source/story.png",
+    "sha256": "9292a98a8faebb80edb5685af40ccc42a9b383f31afe7164eecc92274c54de86"
+  },
+  {
+    "name": "embroidery",
+    "generation_file": "exec-4174fcde-6b3b-495a-8907-e8c6b228b387.png",
+    "source": "assets/source/embroidery.png",
+    "sha256": "acbc9c56e94d769bb2b6e831181f1a51b4dc72d6b0111acee0f1639b7f2ed7dd"
+  }
+]

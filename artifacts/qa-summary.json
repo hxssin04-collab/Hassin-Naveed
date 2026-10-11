@@ -1,0 +1,529 @@
+{
+  "stats": {
+    "startTime": "2026-10-11T13:05:48.202Z",
+    "duration": 310119.16500000004,
+    "expected": 47,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "checks": [
+    {
+      "name": "main navigation, cultural collections and article links are complete",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 17976
+        }
+      ]
+    },
+    {
+      "name": "search finds products, handles empty results and navigates",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9648
+        }
+      ]
+    },
+    {
+      "name": "search and menu dialogs keep keyboard focus within the modal",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6826
+        }
+      ]
+    },
+    {
+      "name": "collection and price filters persist in the URL and reset correctly",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 15048
+        }
+      ]
+    },
+    {
+      "name": "alphabetical sorting changes displayed order and remains shareable",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 15772
+        }
+      ]
+    },
+    {
+      "name": "favourites persist across navigation and reload and can be removed",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22645
+        }
+      ]
+    },
+    {
+      "name": "product gallery, quantity and route changes reset accurately",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10073
+        }
+      ]
+    },
+    {
+      "name": "bag quantities, exact prices, persistence and removal work",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 21228
+        }
+      ]
+    },
+    {
+      "name": "customisation changes the preview and saves selected design and gift note",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 32612
+        }
+      ]
+    },
+    {
+      "name": "checkout validates, calculates delivery, clears details and never places orders",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 30918
+        }
+      ]
+    },
+    {
+      "name": "contact and newsletter forms validate and honestly report local demo behavior",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22327
+        }
+      ]
+    },
+    {
+      "name": "guest account, empty checkout and unknown routes provide useful next steps",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22545
+        }
+      ]
+    },
+    {
+      "name": "all rendered page images load and browsers report no runtime errors",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 41942
+        }
+      ]
+    },
+    {
+      "name": "five important pages pass automated WCAG A/AA accessibility checks",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 49180
+        }
+      ]
+    },
+    {
+      "name": "reference screenshots document the full current desktop and mobile build",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 69191
+        }
+      ]
+    },
+    {
+      "name": "reduced motion is respected and skip link reaches main content",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9963
+        }
+      ]
+    },
+    {
+      "name": "main navigation, cultural collections and article links are complete",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 13140
+        }
+      ]
+    },
+    {
+      "name": "search finds products, handles empty results and navigates",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6261
+        }
+      ]
+    },
+    {
+      "name": "search and menu dialogs keep keyboard focus within the modal",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6406
+        }
+      ]
+    },
+    {
+      "name": "collection and price filters persist in the URL and reset correctly",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8525
+        }
+      ]
+    },
+    {
+      "name": "alphabetical sorting changes displayed order and remains shareable",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6223
+        }
+      ]
+    },
+    {
+      "name": "favourites persist across navigation and reload and can be removed",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9241
+        }
+      ]
+    },
+    {
+      "name": "product gallery, quantity and route changes reset accurately",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4144
+        }
+      ]
+    },
+    {
+      "name": "bag quantities, exact prices, persistence and removal work",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7194
+        }
+      ]
+    },
+    {
+      "name": "customisation changes the preview and saves selected design and gift note",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10956
+        }
+      ]
+    },
+    {
+      "name": "checkout validates, calculates delivery, clears details and never places orders",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12321
+        }
+      ]
+    },
+    {
+      "name": "contact and newsletter forms validate and honestly report local demo behavior",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9377
+        }
+      ]
+    },
+    {
+      "name": "guest account, empty checkout and unknown routes provide useful next steps",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10189
+        }
+      ]
+    },
+    {
+      "name": "all rendered page images load and browsers report no runtime errors",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 20139
+        }
+      ]
+    },
+    {
+      "name": "five important pages pass automated WCAG A/AA accessibility checks",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 21890
+        }
+      ]
+    },
+    {
+      "name": "reference screenshots document the full current desktop and mobile build",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 48547
+        }
+      ]
+    },
+    {
+      "name": "reduced motion is respected and skip link reaches main content",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5282
+        }
+      ]
+    },
+    {
+      "name": "/ stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19107
+        }
+      ]
+    },
+    {
+      "name": "/shop stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19819
+        }
+      ]
+    },
+    {
+      "name": "/collections stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19969
+        }
+      ]
+    },
+    {
+      "name": "/collections/arabian stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 20263
+        }
+      ]
+    },
+    {
+      "name": "/product/arabian-princess stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19134
+        }
+      ]
+    },
+    {
+      "name": "/build-your-own stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 18307
+        }
+      ]
+    },
+    {
+      "name": "/wishlist stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 20046
+        }
+      ]
+    },
+    {
+      "name": "/bag stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 16346
+        }
+      ]
+    },
+    {
+      "name": "/checkout stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22033
+        }
+      ]
+    },
+    {
+      "name": "/about stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 21208
+        }
+      ]
+    },
+    {
+      "name": "/journal stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22567
+        }
+      ]
+    },
+    {
+      "name": "/journal/art-of-embroidery stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19784
+        }
+      ]
+    },
+    {
+      "name": "/info/contact stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19205
+        }
+      ]
+    },
+    {
+      "name": "/info/privacy stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19632
+        }
+      ]
+    },
+    {
+      "name": "/account stays within the viewport at five widths",
+      "project": "responsive",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 16133
+        }
+      ]
+    }
+  ]
+}
