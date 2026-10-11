@@ -50,4 +50,6 @@ Contact and newsletter forms validate locally and explicitly state that no messa
 
 The original tracked `2.0` file remains unchanged. `vercel.json` and `netlify.toml` provide the Vite build and SPA fallback configuration. Deployment needs the hosting account integration or secure credentials; a local build or Git push does not establish that a public deployment exists.
 
+For a manual Netlify update, upload [artifacts/hijabi-plushies-netlify.zip](artifacts/hijabi-plushies-netlify.zip) in the site's Deploys page. This archive contains the verified production build with `index.html` at its root and a fallback for internal shopping routes. Fresh production-preview captures are [desktop](artifacts/current-homepage.png) and [phone](artifacts/current-homepage-mobile.png).
+
 See [REFERENCE_AUDIT.md](REFERENCE_AUDIT.md) for the comparison with all eight pictures and the video, [DESIGN.md](DESIGN.md) for the shared visual system, and [QA_REPORT.md](QA_REPORT.md) for current-build verification and limits.
